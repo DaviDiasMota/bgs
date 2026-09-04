@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --vermelho_brilhante:rgba(234, 7, 7, 0.298);
+    --vermelho_escuro:rgb(80, 0, 0);;
+    --vermelho:rgb(221, 82, 82);
+    --preto:#292626;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.img-container{
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../assets/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+    margin-top: 20px;
+    border-radius: 100px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 70%;
+    background-color: rgb(66, 38, 38);
+    box-shadow: 2px 2px 10px rgba(234, 7, 7, 0.298);
+    position: fixed;
+    z-index: 1;
+}
+
+nav > a{
+    color: rgb(255, 243, 243);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+nav > a:hover{
+    text-shadow: 2px 2px 4px rgb(252, 197, 197);
+    transform: translateY(-2px);
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
+main{
+    margin-top: 10px
+}
+
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.298) ;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 800px;
+    color: var(--vermelho);
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.text{
+    margin-left: 100px;
+    width: 800px;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(234, 7, 7, 0.298);
+    padding: 20px;
+    color: white;
+}
+
+.contador {
+    border-top: 10px white solid;
+    width: 100%;
+    background-color: var(--vermelho_escuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+    padding: 60px 20px; 
+    gap: 20px;
+    overflow: hidden;
+}
+
+.contador p{
+    color: white;
+    text-shadow: 1px 1px 9px var(--vermelho);
+    font-size: 2em;
+}
+
+.time-container{
+    margin-top:0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-container p,h1{
+    color: white;
+    text-shadow: 1px 1px 9px var(--vermelho);
+}
+
+.contador button{
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+    padding: 15px 10px;
+    width: 250px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px var(--vermelho);
+    text-shadow: 1px 1px 4px var(--vermelho);
+    cursor: pointer;
+    outline: none;
+}
+
+.contador button:hover{
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 10px var(--vermelho);
+    text-shadow: 1px 1px 9px var(--vermelho);
+
+}
+.pop-up {
+    margin-right: 20px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b7a0b;
+    min-width: 340px;
+    width: fit-content;
+    padding: 16px 40px 16px 20px; /* espaço extra na direita pro 'x' */
+    border-radius: 14px;
+}
+
+.pop-up p.pop-up-mensagem {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+    text-shadow: none;
+    box-shadow: none;
+    white-space: nowrap; /* evita quebra de linha indesejada */
+}
+
+/* Sobrescreve as regras globais de .contador button */
+.contador .pop-up button.fechar {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 2px 6px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: none;
+    transform: none;
+}
+
+.contador .pop-up button.fechar:hover {
+    opacity: 0.7;
+    box-shadow: none;
+    text-shadow: none;
+    transform: none;
+}
+
+.card-form{
+    width: 500px;
+    background-color: #292626;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.mensagem-form{
+    text-align: center;
+
+}
+
+.input-email{
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black;
+    width: 80%;
+}
+
+
+
